@@ -947,6 +947,10 @@ static CGFloat itemMargin = 5;
     if (tzImagePickerVc.sortAscendingByModificationDate) {
         item = [self getAllCellCount] - 1;
     }
+    NSInteger allCount = [self->_collectionView numberOfItemsInSection:0];
+    if (item >= allCount) {
+        item = allCount;
+    }
     [self->_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:item inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
     self->_shouldScrollToBottom = NO;
     self->_collectionView.hidden = NO;
