@@ -949,7 +949,7 @@ static CGFloat itemMargin = 5;
     }
     NSInteger allCount = [self->_collectionView numberOfItemsInSection:0];
     if (item >= allCount) {
-        item = allCount;
+        item = allCount - 1;
     }
     [self->_collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathForItem:item inSection:0] atScrollPosition:UICollectionViewScrollPositionBottom animated:NO];
     self->_shouldScrollToBottom = NO;
